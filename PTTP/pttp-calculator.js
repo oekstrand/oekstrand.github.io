@@ -8,10 +8,13 @@ weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
 const startDate = new Date("2019-01-14");
-const endDate = new Date("2019-12-31");
+const endDate = new Date();
+
 const result = [];
 let currentDate = startDate;
 let counter = 1;
+const today = new Date();
+
 while (currentDate < endDate) {
     const day = currentDate.getDay();
     if (day !== 0 && day !== 6) {
@@ -33,5 +36,18 @@ while (currentDate < endDate) {
     currentDate.setDate(currentDate.getDate() + 1);
 }
 
-
-console.dir(result);
+$(document).ready(function () {
+    $("#date-header").html(weekday[today.getDay()] + " " + today.toLocaleDateString());
+    const startingDl = 100;
+    const startingBP = 60;
+    const startingCH = 0;
+    const increaseDL = increaseBP = 2.5;
+    const increaseCH = 1.25;
+    const multiplier = result[result.length - 1].multiplier;
+    $("#dl-1").html(startingDl +  multiplier * increaseDL + "kg");
+    $("#dl-2").html((startingDl +  multiplier * increaseDL)*0.9 + "kg");
+    $("#bp-1").html(startingBP +  multiplier * increaseBP + "kg");
+    $("#bp-2").html((startingBP +  multiplier * increaseBP)*0.9 + "kg");
+    $("#ch-1").html(startingCH +  multiplier * increaseCH + "kg");
+    $("#ch-2").html((startingCH +  multiplier * increaseCH)*0.9 + "kg");
+});
