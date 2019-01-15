@@ -11,11 +11,11 @@
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: ["2018-06-16", "2018-08-16"],
+        labels: ["2018-06-16", "2018-08-16", "2018-09-03", "2018-09-17", "2018-11-21"],
         datasets: [{
             label: 'No-Pdl Blades',
                   lineTension: 0,
-            data: [23, 23],
+            data: [23, 23, 27, 28, 32],
             backgroundColor: [
               '#FFEBD6'
             ],
@@ -28,30 +28,18 @@
             label: 'Template Blades',
                   lineTension: 0,
 
-            data: [66, 67],
+            data: [66, 67, 67, 65, 52],
             backgroundColor: [
               '#96C7FF'
             ],
             borderColor: [
               '#96C7FF'
-            ],
-            borderWidth: 1
-          },
-          {
-            label: 'Blades with custom parts',
-            data: [26, 25],
-            lineTension: 0,
-            backgroundColor: [
-              '#635F99'
-            ],
-            borderColor: [
-              '#635F99'
             ],
             borderWidth: 1
           },
                     {
-            label: 'Blades with parts',
-            data: [18, 18],
+            label: 'Blades',
+            data: [44, 43, 38, 38, 38],
             lineTension: 0,
             backgroundColor: [
               '#6A64CC'

@@ -1,0 +1,1 @@
+"NoPdl blades: " + (get-childitem -recurse *.ts | select-string -pattern "@TemplateBlade\.Decorator\(" | measure).Count, "Template blades: " + (get-childitem -recurse *.pdl | select-string -pattern "<TemplateBlade " | measure).Count, "Blades: " + (get-childitem -recurse *.pdl | select-string -pattern "<Blade " | measure).Count
